@@ -8,14 +8,15 @@ import {
 import "leaflet/dist/leaflet.css";
 
 function Map() {
-  const lat = 40.609787846393196;
-  const lng = 20.7890265133657;
+  const lat = 34.2644;
+  const lng = -6.5779;
+  const position = [lat, lng];
 
   return (
     <main className="d w-[100%] h-[10vh] z-0">
       {/*leaflet and react-leaflet*/}
       <div>
-        <MapContainer center={[34.2644, -6.5779]} zoom={12}>
+        <MapContainer center={position} zoom={20}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,6 +30,7 @@ function Map() {
             fillColor="green"
             fillOpacity={0.5}
           >
+            {/* <Marker position={position}> */}
             <Popup className="w-[460px] h-[150px]">
               <p className="text-[25px]">My Location</p>
               {/* Add a link to open location in Google Maps */}
@@ -41,6 +43,7 @@ function Map() {
                 Open in Google Maps
               </a>
             </Popup>
+            {/* </Marker> */}
           </CircleMarker>
         </MapContainer>
       </div>

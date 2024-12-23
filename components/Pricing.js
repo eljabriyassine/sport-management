@@ -7,7 +7,7 @@ import Maps from "../public/assets/HugeGlobal.svg";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import Map from "./misc";
+import Map from "../public/assets/map.png";
 
 const Pricing = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -128,7 +128,7 @@ const Pricing = () => {
               variants={scrollAnimation}
             >
               <div className="w-full h-[500px] relative z-0">
-                <Map />
+                <Image src={Map} alt="Map" />
               </div>
             </motion.div>
           </ScrollAnimationWrapper>
